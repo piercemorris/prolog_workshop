@@ -19,13 +19,19 @@ $ swipl
 
 ### Windows Installation
 
+1. Navigate to [https://www.swi-prolog.org/download/stable] and download the relevant 64 or 32 bit installation file listed under **Binaries**
+
+2. Test the installation was successful
+```bash
+$ swipl
+```
 
 ## Useful Prolog commands
 
 Given a file name `movies.pl` and you are in the same directory, you can load the file by using the following command:
 ```prolog
 ? - [movies].
-true. 
+true.
 ```
 
 ## Exercises
