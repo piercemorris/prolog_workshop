@@ -88,9 +88,47 @@ Add rules to the knowledge base file to do the following:
 3. `same_year(M1, M2)` - the movies are released in the same year.
 4. `co_star(A1, A2)` - the actor/actress are in the same movie.
 
-## Exploring rules for common list functions
-Things like member, count, sum, append, remove, reverse?, max, flattening
+## Exploring predicates for common list functions
 
+### 1. Length
+Define a predicate `list_length/2` which can be used to find the length of a list.
+
+Should be able to query like this:
+```prolog
+?- list_length([a, b, c, d], N).
+N = 4
+```
+or
+```prolog
+?- list_length([a, b, c, d], 4).
+true.
+```
+### 2. List membership
+Define a predicate `list_member/2` which can be used to check if an element is a member of a list.
+
+Should be able to query like this:
+```prolog
+?- list_member([a, b, c, d], a).
+true.
+```
+
+### 3. Sum
+Define a predicate `list_sum/2` which can be used to calculate the sum of all elements in a list.
+
+Should be able to query like this:
+```prolog
+?- list_sum([1, 2, 3], S).
+S = 6
+```
+
+### 4. Append
+
+### 5. Reverse
+
+### 6. Flatten
+
+### Extra
+If the above predicates are too easy, take a look at the [Accumators](#accumulators) section and see if you can implement any of the above predicates using an accumulator.
 ## Complex problems
 - Depth-first search
 - Sudoku?
