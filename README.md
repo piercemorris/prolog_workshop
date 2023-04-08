@@ -54,6 +54,11 @@ You can tell `swi-prolog` is using `trace` mode as the query lines will now look
 ```
 
 To turn the trace off, run `notrace`. This may put `swi-prolog` into debug mode. You can run `nodebug` to turn this off.
+
+### Exiting SWIPL
+```prolog
+?- halt.
+```
 # Exercises
 
 ## Exploring a knowledge base
