@@ -1,3 +1,6 @@
+%% Taken mostly from https://www.metalevel.at/queens/
+%% Need to work this into the worksheet as a stretch-goal, maybe give the outline of the predicates with comments/pseudo-code to guide
+
 %% Need this library to use "ins"
 :- use_module(library(clpfd)).
 
@@ -14,7 +17,7 @@ safe_queens([Q|RestOfQueens]) :-
     %% Why does the order of these matter?
     safe_queens(Q, RestOfQueens, 1), %% Current queen doesn't break safety with rest of queens
     safe_queens(RestOfQueens). %% Rest of the queens are safe
-    
+
 
 %% How to determine which are safe
 %% What is this for? - Think it's saying a queen is safe if it's the only queen
