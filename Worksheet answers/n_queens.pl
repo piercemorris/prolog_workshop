@@ -4,10 +4,14 @@
 %% Need this library to use "ins"
 :- use_module(library(clpfd)).
 
+n_queens(N, Qs) :-
+    n_queens_logic(N, Qs),
+    labeling([ff], Qs).
+
 %% ins can be written as either
 %%   ins(List, Domain) or
 %%   List ins Domain
-n_queens(N, Qs) :-
+n_queens_logic(N, Qs) :-
     length(Qs, N),
     ins(Qs, 1..N),
     safe_queens(Qs).

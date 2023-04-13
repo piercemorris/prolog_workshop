@@ -41,10 +41,43 @@ S = 6
 
 ### Extra
 If the above predicates are too easy, take a look at the [Accumators](#accumulators) section and see if you can implement any of the above predicates using an accumulator.
-## Complex problems
-- Depth-first search
-- Sudoku?
-- N-queens or some simpler variation
+## More Difficult Problems
+
+### 1. N-Queens
+The N-Queens problem is a generalization of the traditional 8-queens problem. You can find a good description [here](https://leetcode.com/problems/n-queens/).
+
+For this exercise, assume that each possible solution to the n-queens problem will be represented by a list of numbers, where number `X` at index `i` indicates the queen in column `i` would be safe on row `X` of the board.
+
+Write a predicate `n_queens/2` which will return all possible solutions for a given value of N. An example output of calling this is:
+
+```prolog
+?- n_queens(4, Qs).
+Qs = [2, 4, 1, 3] ;
+Qs = [3, 1, 4, 2] .
+```
+
+<details>
+    <summary>A starting guide for those who want it</summary>
+
+    As a starting point, use the following:
+    ```prolog
+    :- use_module(library(clpfd)).
+    n_queens(N, Qs) :-
+        n_queens_logic(N, Qs),
+        labeling([ff], Qs).
+
+    n_queens_logic(N, Qs) :-
+        length(Qs, N),
+        ins(Qs, 1..N),
+        safe_queens(Qs).
+    ```
+
+    You will need to create and complete the logic for the `safe_queens` predicate. The `clpfd` library contains some useful predicates for constraint logic, including `ins` and `labeling`. The `ins` predicate ensures all values in the Qs list are within the given range `1..N`. The `labeling` predicate, with the `[ff]` option, will systematically try out values that are within this range. See [this library documentation](https://www.swi-prolog.org/man/clpfd.html) for more information.
+</details>
+
+### 2. LBTT Tax Calculator (AKA Academy Pair Programming Task)
+
+### 3. Depth-First Search
 
 ## Further reading
 
