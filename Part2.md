@@ -73,9 +73,18 @@ n_queens_logic(N, Qs) :-
 ```
 
 You will need to create and complete the logic for the `safe_queens` predicate. The `clpfd` library contains some useful predicates for constraint logic, including `ins` and `labeling`. The `ins` predicate ensures all values in the Qs list are within the given range `1..N`. The `labeling` predicate, with the `[ff]` option, will systematically try out values that are within this range. See [this library documentation](https://www.swi-prolog.org/man/clpfd.html) for more information.
+
+For some of the arithmetic involved, you may also want to look at [this](https://www.swi-prolog.org/pldoc/man?section=clpfd-integer-arith).
 </details>
 
 ### 2. LBTT Tax Calculator (AKA Academy Pair Programming Task)
+NEED TO ADD A DESCRIPTION OF THE TASK HERE.
+
+Write a predicate `calculateTax/2` which will calculate the amount of tax to be paid for a specific value of house. An example of running this is:
+```prolog
+?- calculateTax(900000, Tax).
+Tax = 66350.00 .
+```
 
 ### 3. Depth-First Search
 
