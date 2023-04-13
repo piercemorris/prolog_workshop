@@ -57,22 +57,22 @@ Qs = [3, 1, 4, 2] .
 ```
 
 <details>
-    <summary>A starting guide for those who want it</summary>
+<summary>A starting guide for those who want it</summary>
 
-    As a starting point, use the following:
-    ```prolog
-    :- use_module(library(clpfd)).
-    n_queens(N, Qs) :-
-        n_queens_logic(N, Qs),
-        labeling([ff], Qs).
+As a starting point, use the following:
+```prolog
+:- use_module(library(clpfd)).
+n_queens(N, Qs) :-
+    n_queens_logic(N, Qs),
+    labeling([ff], Qs).
 
-    n_queens_logic(N, Qs) :-
-        length(Qs, N),
-        ins(Qs, 1..N),
-        safe_queens(Qs).
-    ```
+n_queens_logic(N, Qs) :-
+    length(Qs, N),
+    ins(Qs, 1..N),
+    safe_queens(Qs).
+```
 
-    You will need to create and complete the logic for the `safe_queens` predicate. The `clpfd` library contains some useful predicates for constraint logic, including `ins` and `labeling`. The `ins` predicate ensures all values in the Qs list are within the given range `1..N`. The `labeling` predicate, with the `[ff]` option, will systematically try out values that are within this range. See [this library documentation](https://www.swi-prolog.org/man/clpfd.html) for more information.
+You will need to create and complete the logic for the `safe_queens` predicate. The `clpfd` library contains some useful predicates for constraint logic, including `ins` and `labeling`. The `ins` predicate ensures all values in the Qs list are within the given range `1..N`. The `labeling` predicate, with the `[ff]` option, will systematically try out values that are within this range. See [this library documentation](https://www.swi-prolog.org/man/clpfd.html) for more information.
 </details>
 
 ### 2. LBTT Tax Calculator (AKA Academy Pair Programming Task)
