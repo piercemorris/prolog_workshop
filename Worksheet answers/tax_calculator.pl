@@ -16,7 +16,7 @@ calculateTax([[LowerThreshold, UpperThreshold, PercentageTax]|RestOfBands], Valu
     calculateTax(RestOfBands, Value, TaxOfRestOfBands),
     TotalTax is TaxForCurrentBand + TaxOfRestOfBands.
 
-%% TODO: With accumulator
+%% With accumulator
 calculateTaxAcc([], _, TotalTax, TotalTax).
 calculateTaxAcc([[LowerThreshold, UpperThreshold, PercentageTax]|RestOfBands], Value, AccTax, TotalTax) :-
     calculateTax(LowerThreshold, UpperThreshold, PercentageTax, Value, TaxForCurrentBand),
