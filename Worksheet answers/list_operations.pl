@@ -1,5 +1,3 @@
-%% Don't include this in the repo
-
 %% LENGTH
 list_length([], 0).
 list_length([_|T], L) :-
@@ -33,21 +31,23 @@ list_sum_acc([H|T], Acc, Sum) :-
     NewAcc is Acc + H,
     list_sum_acc(T, NewAcc, Sum).
 
-%% APPEND - CHECK THIS ONLINE, MADE IT UP -> then add to worksheet
+%% APPEND
 list_append([], X, [X]).
 list_append([H|T], Element, [H|TailWithElement]) :-
     list_append(T, Element, TailWithElement).
-%% Could this be done with accumulator?
-%% Maybe look at inserting element into specific position?
-%% Should we look at appending a list to another list, not just an element
 
-%% REVERSE - Implement this better, don't think we NEED cut or to use list_append
+%% REVERSE
 list_reverse([X], [X]) :- !.
 list_reverse([H|T], L) :-
     list_reverse(T, TReversed),
     list_append(TReversed, H, L).
 
-%% could this be done with accumulator?
+%% REVERSE with accumulator
+list_reverse_acc(L, R) :- list_reverse_acc(L, [], R).
+list_reverse_acc([], R, R) :- !.
+list_reverse_acc([H|T], Acc, R) :-
+    list_reverse_acc(T, [H|Acc], R).
+
 
 %% FLATTEN
 list_flatten([], []).
@@ -55,12 +55,12 @@ list_flatten([], []).
 list_flatten([H|T], Flat) :-
     list_flatten(H, HFlat),
     list_flatten(T, TFlat),
-    !, %% Without this cut, get some weird side-effects
-    append(HFlat, TFlat, Flat). %% In-built predicate that appends two lists, should get them to implement this earlier
+    !,
+    append(HFlat, TFlat, Flat). %% In-built predicate that concatenates two lists
 
 list_flatten(X, [X]). %% If head element is not a list, put it in a list so it works with append
-%%or
-% list_flatten([H|T], [H|TFlat]) :-
-%     H \= [],
-%     H \= [_|_],
-%     list_flatten(T, TFlat).
+
+
+%% PALINDROME
+list_palindrome(List) :-
+    list_reverse(List, List).

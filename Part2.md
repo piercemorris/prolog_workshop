@@ -34,11 +34,28 @@ S = 6
 ```
 
 ### 4. Append
+Define a predicate `list_append/3` which can be used to append an element to the end of a list.
 
+```prolog
+?- list_append([a, b, c], d, L).
+L = [a, b, c, d]
+```
 ### 5. Reverse
+Define a predicate `list_reverse/2` which can be used to reverse a list.
 
+```prolog
+?- list_reverse([a, b, c], L).
+L = [c, b, a]
+```
 ### 6. Flatten
+Define a predicate `list_flatten` which can be used to flatten a list of lists.
 
+```prolog
+?- list_flatten([a, [b, c], [[d, e]]], L).
+L = [a, b, c, d, e].
+```
+
+**Note:** For this, you may want to use the in-built [`append/3`](https://www.swi-prolog.org/pldoc/doc_for?object=append/3) operator, which can concatenate two lists. 
 ### Extra
 If the above predicates are too easy, take a look at the [Accumators](#accumulators) section and see if you can implement any of the above predicates using an accumulator.
 ## More Difficult Problems
@@ -86,9 +103,8 @@ Write a predicate `calculateTax/2` which will calculate the amount of tax to be 
 Tax = 66350.00 .
 ```
 
-### 3. Depth-First Search
-
-### 4. Natural Language Processing (NLP)
+### 3. Extra problems
+There are a set of 99 problems available [here](https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/) if you want more exercises.
 
 ## Further reading
 
