@@ -55,7 +55,7 @@ Define a predicate `list_flatten` which can be used to flatten a list of lists.
 L = [a, b, c, d, e].
 ```
 
-**Note:** For this, you may want to use the in-built [`append/3`](https://www.swi-prolog.org/pldoc/doc_for?object=append/3) operator, which can concatenate two lists. 
+**Note:** For this, you may want to use the in-built [`append/3`](https://www.swi-prolog.org/pldoc/doc_for?object=append/3) operator, which can concatenate two lists.
 ### Extra
 If the above predicates are too easy, take a look at the [Accumators](#accumulators) section and see if you can implement any of the above predicates using an accumulator.
 ## More Difficult Problems
@@ -93,15 +93,27 @@ You will need to create and complete the logic for the `safe_queens` predicate. 
 
 For some of the arithmetic involved, you may also want to look at [this](https://www.swi-prolog.org/pldoc/man?section=clpfd-integer-arith).
 </details>
+<br/>
 
 ### 2. LBTT Tax Calculator (AKA Academy Pair Programming Task)
-NEED TO ADD A DESCRIPTION OF THE TASK HERE.
+Buying a house in the UK incurs a tax which varies according to the price of the house. In Scotland this is called Land and Buildings Transaction Tax (LBTT) – you may know it as Stamp Duty, the equivalent tax in England.
 
-Write a predicate `calculateTax/2` which will calculate the amount of tax to be paid for a specific value of house. An example of running this is:
+Write a predicate `calculateTax/2` which will calculate the amount of LBTT to be paid for a specific value of house. An example of running this is:
 ```prolog
 ?- calculateTax(900000, Tax).
 Tax = 66350.00 .
 ```
+
+Use the following values for the percentage tax in each tax band:
+| Range                | Percentage tax |
+| -------------------- | -------------- |
+| Up to £145,000       | 0%             |
+| £145,001 to £250,000 | 2%             |
+| £250,001 to £325,000 | 5%             |
+| £325,001 to £750,000 | 10%            |
+| Over £750,000	       | 12%            |
+
+**Note:** You can use [this calculator](https://revenue.scot/calculate-tax/calculate-property-transactions) to check what tax should be paid for a given property value.
 
 ### 3. Extra problems
 There are a set of 99 problems available [here](https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/) if you want more exercises.
