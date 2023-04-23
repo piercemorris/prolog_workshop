@@ -64,3 +64,8 @@ list_flatten(X, [X]). %% If head element is not a list, put it in a list so it w
 %% PALINDROME
 list_palindrome(List) :-
     list_reverse(List, List).
+
+%% DELETE
+list_delete([X|Tail], X, Tail) :- !.
+list_delete([Y|Tail], X, [Y|TailWithoutX]) :-
+    list_delete(Tail, X, TailWithoutX).
