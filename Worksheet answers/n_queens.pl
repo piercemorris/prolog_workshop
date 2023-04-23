@@ -24,12 +24,12 @@ safe_queens([CurrentQueen|RestOfQueens]) :-
 safe_queens(_, [], _).
 
 %% See https://www.swi-prolog.org/pldoc/man?section=clpfd-integer-arith
-%% for why we use #\= instead of \= and #= instead of "is" of =:=
+%% for why we use #\= instead of \=
 safe_queens(Q, [NextQueen|RestOfQueens], DiagonalRowDifference) :-
     %% Not in same row
     Q #\= NextQueen,
     %% Not in the same diagnoal
-    abs(Q - NextQueen) \= DiagonalRowDifference,
+    abs(Q - NextQueen) #\= DiagonalRowDifference,
     %% Next diagonal row difference
     NewDiagonalRowDifference is DiagonalRowDifference + 1,
     safe_queens(Q, RestOfQueens, NewDiagonalRowDifference).
